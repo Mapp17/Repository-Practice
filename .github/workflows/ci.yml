@@ -1,0 +1,21 @@
+#workflow name
+name: CI Demo 
+#when the workflow will run
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+
+#what jobs will run as part of the workflow
+jobs:
+  demo-job:
+    runs-on: ubuntu-latest
+#Steps to be executed in the job
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run a command
+        run: echo "checkout gave a greenlight"
+
